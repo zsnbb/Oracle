@@ -134,8 +134,8 @@ select *
 from order_details;
 ```
 插入后查询结果脚本输出
-![](https://github.com/LYL001/Oracle/blob/master/test3/1.png)
-![](https://github.com/LYL001/Oracle/blob/master/test3/2.png)
+![](https://github.com/zsnbb/Oracle/blob/master/test3/zj1.png)
+![](https://github.com/zsnbb/Oracle/blob/master/test3/zj2.png)
 
 ## 分区查询
 ```sql
@@ -147,8 +147,8 @@ select * from order_details ode join orders ods
 	on ode.order_id=ods.order_id;
 ```
 查询脚本
-![](https://github.com/LYL001/Oracle/blob/master/test3/3.png)
-![](https://github.com/LYL001/Oracle/blob/master/test3/4.png)
+![](https://github.com/zsnbb/Oracle/blob/master/test3/zj3.png)
+![](https://github.com/zsnbb/Oracle/blob/master/test3/zj4.png)
 
 ## 不分区查询
 ```sql
@@ -156,8 +156,8 @@ select * from order_details ode join orders ods
 select * from orders, order_details where orders.order_id = order_details.order_id(+)；
 ```
 查询脚本
-![](https://github.com/LYL001/Oracle/blob/master/test3/5.png)
-![](https://github.com/LYL001/Oracle/blob/master/test3/6.png)
+![](https://github.com/zsnbb/Oracle/blob/master/test3/zj5.png)
+![](https://github.com/zsnbb/Oracle/blob/master/test3/zj6.png)
 
 
 - 分区的作用：
