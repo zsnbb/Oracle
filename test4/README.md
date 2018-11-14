@@ -30,6 +30,7 @@ select * from employees where employee_id=111;
   
   ![](./zj8.png)
   ![](./zj9.png)
+  
   6.查询部门表，同时显示部门的负责人姓名。
   
   ![](./zj10.png)
