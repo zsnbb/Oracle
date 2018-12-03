@@ -13,31 +13,31 @@ Oracle有一个开发者角色resource，可以创建表、过程、触发器等
 ## 实验参考步骤
 
 
-- 第1步：以system登录到pdborcl，创建角色lyl_role和用户lyl，并授权和分配空间：
+- 第1步：以system登录到pdborcl，创建角色zj和用户zj1，并授权和分配空间：
 
 ```sql
 $ sqlplus system/123@pdborcl
-SQL> CREATE ROLE lyl_role;
+SQL> CREATE ROLE zj;
 Role created.
-SQL> GRANT connect,resource,CREATE VIEW TO lyl_role;
+SQL> GRANT connect,resource,CREATE VIEW TO zj;
 Grant succeeded.
-SQL> CREATE USER lyl IDENTIFIED BY 123 DEFAULT TABLESPACE users TEMPORARY TABLESPACE temp;
+SQL> CREATE USER zj1 IDENTIFIED BY 123 DEFAULT TABLESPACE users TEMPORARY TABLESPACE temp;
 User created.
-SQL> ALTER USER lyl QUOTA 50M ON users;
+SQL> ALTER USER zj1 QUOTA 50M ON users;
 User altered.
-SQL> GRANT con_res_view TO lyl;
+SQL> GRANT con_res_view TO zj1;
 Grant succeeded.
 SQL> exit
 ```
 ![picture](https://github.com/zsnbb/Oracle/blob/master/test2/zj1.png)
 ![picture](https://github.com/zsnbb/Oracle/blob/master/test2/zj2.png)
 
-- 第2步：新用户lyl连接到pdborcl，创建表mytable和视图myview，插入数据，最后将myview的SELECT对象权限授予hr用户。
+- 第2步：新用户zj连接到pdborcl，创建表mytable和视图myview，插入数据，最后将myview的SELECT对象权限授予hr用户。
 
 ```sql
 $ sqlplus lyl/123@pdborcl
 SQL> show user;
-USER is "LYL"
+USER is "zj"
 SQL> CREATE TABLE mytable (id number,name varchar(50));
 Table created.
 SQL> INSERT INTO mytable(id,name)VALUES(1,'zhang');
